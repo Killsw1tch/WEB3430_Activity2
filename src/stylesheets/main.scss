@@ -44,8 +44,9 @@ nav{
 main{
     display: flex;
     flex-flow:row wrap;
+    justify-content: space-around;
 
-    & > card{
+    & > .card{
         width: 30%;
         border: 1px solid #eee;
         padding: 10px;
@@ -58,6 +59,7 @@ main{
         .extra{
             list-style: none;
             display: flex;
+            flex-flow: row wrap;
             padding: 10px 0px;
             justify-content: center;
             align-items: center;
@@ -77,4 +79,10 @@ button.primary{
     border-radius: 5px;
     background: maroon;
     color: white;
+}
+
+footer{
+    background: black;
+    color: white;
+    padding: 20px 0 50px 20px;
 }
