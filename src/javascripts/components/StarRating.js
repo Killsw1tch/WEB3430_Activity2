@@ -2,16 +2,23 @@ import React, { useState } from 'react'
 import {FaStar} from 'react-icons/fa'
 import {top10} from '../top10'
 
-export default function StarRating(){
-    const Star = ({selected = false}) => (
-        <FaStar color={selected ? "maroon" : "gray"}/>
-    )
+const createArray = length => [...Array(length)];
 
-    return [
-        <FaStar color="red" />,
-        <FaStar color="red" />,
-        <FaStar color="red" />,
-        <FaStar color="grey" />,
-        <FaStar color="grey" /> 
-    ]
-}
+const Star = ({ selected = false }) => (
+    <FaStar color={selected ? "maroon" : "grey"} />
+  );
+
+  export default function StarRating({ totalStars = 5 }) {
+    const [selectedStars, setSelectedStars] = useState(4);
+    return (
+      <>
+        {createArray(totalStars).map((n, i) => (
+          <Star
+            key={i}
+            selected={selectedStars > i}
+            onSelect={() => setSelectedStars(i + 1)}
+          />
+        ))}
+      </>
+    );
+  }

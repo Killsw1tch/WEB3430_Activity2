@@ -11,7 +11,7 @@ export default function Movie(props){
         <h2>{m.title}</h2>
         <p>{m.plot}</p>
         <ul className="extra">
-          <li><StarRating /></li>
+          <li><StarRating/></li>
           <li><strong>{m.rating}</strong> rating</li>
           <li><strong>{m.votes}</strong> votes</li>
           <li>
